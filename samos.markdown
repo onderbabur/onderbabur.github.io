@@ -4,4 +4,57 @@ title: SAMOS
 permalink: /samos/
 ---
 
-SAMOS tutorial... 
+# Introduction
+**SAMOS** (Statistical Analysis of Models) is a framework for model analytics and management. It is capable of processing large numbers of  
+models for different scenarios, notably domain clustering and clone detection. The underlying principles are inspired from the domains 
+information retrieval, data science and machine learning. The main components of a typical SAMOS workflow consist of (a) model 
+fragmentation in terms n-grams, (b) feature comparison using algorithms and natural language processing, (c) vector space model computation, 
+(d) distance measurement and clustering.   
+
+
+# Features in SAMOS 1.0
+1. Support for processing Ecore metamodels, for clustering and clone detection scenarios
+2. Simple CLI for crawling test models, and running clustering and clone detection with standard settings
+3. Configuration (through changing the source code) of the following:
+* static scoping for model fragment: whole model, EPackage, EClass
+* unigram and bigram feature extraction with full set of attributes
+* many more, notably natural language processing parameters such as tokenisation, lemmatization, WordNet semantic similarity
+
+# Running SAMOS from the virtual image 
+1. Download [Virtual Box](https://www.virtualbox.org/wiki/Downloads) for your operating system.
+2. Download [the Lubuntu image archive we provide](https://drive.google.com/file/d/1vNis0cQ2ZQ4uN9MuuO8ZUmLCE3BuaPr6/view?usp=sharing), which contains all the required software and configuration to run SAMOS. 
+3. Unrar the image into a folder. 
+4. Go to Virtual Box, and using Tools click on "New" to add a new virtual machine. 
+5. 
+
+# Setting up SAMOS using Eclipse
+
+#### Install required software
+1. Install [Java SE JDK](https://www.oracle.com/java/technologies/javase-downloads.html) (tested with versions 1.8 and 1.11).
+2. Download [Eclipse Modeling Tools](https://www.eclipse.org/downloads/packages/release/2021-03/r/eclipse-modeling-tools) for your operating system (tested with Windows, MacOS, Linux for the Eclipse package version 2021-03).
+3. Run Eclipse and through Eclipse marketplace install the Eclipse plugin [m2e](https://github.com/eclipse-m2e/m2e-core/blob/master/README.md#-installation) for Maven integration. 
+4. Install [R](https://cran.r-project.org/mirrors.html) for your operating system (tested with versions 3.6.1 and 4+). 
+5. Install [rJava](https://rforge.net/JRI/) by going to R and running the command `install.packages("rJava")`. Make sure to note down the values for R_HOME and the JRI library path as explained in the rJava website, to be later added in Eclipse run configurations. 
+6. Install the custom R package "vegan" from the archive file under the path lib\vegan_2.4-3.tar.gz, using the R command `install.packages(FULL_PATH_TO_ARCHIVE, repos = NULL)`. The rest of the required R packages are installed when you first run SAMOS analyses. 
+
+#### Importing, building and running SAMOS with sample models
+7. Download project zip file from the GitHub address of [SAMOS](https://github.com/onderbabur/samos/archive/refs/heads/main.zip).
+8. Open Eclipse, and go to menu item File->Import. Select "General" and then "Projects from Folder or Archive". Click on the button "Archive...". Select the zip file and click ok. Eclipse creates two items to be imported. Check the one containing an Eclipse project ("samos-main_expanded.zip/samos-main") and click on "Finish". 
+9. You should have SAMOS as a project in Eclipse workspace now. To build SAMOS, right click on the "pom.xml" in the root project folder of SAMOS, and click on "Maven install...". All dependencies should be downloaded and SAMOS should be compiled. 
+10. There are three run configuration files in the project root folder, with the extension ".launch". R_HOME and JRI library paths should be set for running SAMOS. For every .launch file, you should change the values in the XML configuration to the correct values in your system:
+
+```
+	...
+        <mapEntry key="R_HOME" value="PATH_TO_YOUR_R_HOME"/>
+    ...
+    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Djava.library.path=PATH_TO_YOUR_JRI_LIB ..."/>
+     
+```
+11. Right click on "SAMOSRunner crawl atlzoo.launch", select "Run As..." and choose the first item to run the crawler and download sample files to run SAMOS with. 
+12. Afterwards you can repeat the step 11 for either "SAMOSRunner cluster atlzoo.launch" or "SAMOSRunner clone atlzoo.launch" for domain clustering and clone detection respectively. 
+13. Once SAMOS is finished, the results can be viewed under the project root folder "results/r/atlzoo". 
+
+#### Running SAMOS with different datasets and configuration
+For playing with other settings, you can run SAMOS (main entry point: nl.tue.set.samos.main.SAMOSRunner.java) with different datasets (e.g. [the large Ecore dataset on Zenodo](https://zenodo.org/record/2585456) and configuration such as scope, and NLP preprocessing. 
+
+# References
