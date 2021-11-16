@@ -44,10 +44,10 @@ fragmentation in terms n-grams, (b) feature comparison using algorithms and natu
 10. There are three run configuration files in the project root folder, with the extension ".launch". R_HOME and JRI library paths should be set for running SAMOS. For every .launch file, you should change the values in the XML configuration to the correct values in your system:
 
     ```
-	...
-        <mapEntry key="R_HOME" value="PATH_TO_YOUR_R_HOME"/>
-    ...
-    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Djava.library.path=PATH_TO_YOUR_JRI_LIB ..."/>
+    	...
+            <mapEntry key="R_HOME" value="PATH_TO_YOUR_R_HOME"/>
+        ...
+        <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Djava.library.path=PATH_TO_YOUR_JRI_LIB ..."/>
      
     ```
 11. Right click on "SAMOSRunner crawl atlzoo.launch", select "Run As..." and choose the first item to run the crawler and download sample files to run SAMOS with. 
