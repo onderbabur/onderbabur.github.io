@@ -43,13 +43,13 @@ fragmentation in terms n-grams, (b) feature comparison using algorithms and natu
 9. You should have SAMOS as a project in Eclipse workspace now. To build SAMOS, right click on the "pom.xml" in the root project folder of SAMOS, and click on "Maven install...". All dependencies should be downloaded and SAMOS should be compiled. 
 10. There are three run configuration files in the project root folder, with the extension ".launch". R_HOME and JRI library paths should be set for running SAMOS. For every .launch file, you should change the values in the XML configuration to the correct values in your system:
 
-```
+    ```
 	...
         <mapEntry key="R_HOME" value="PATH_TO_YOUR_R_HOME"/>
     ...
     <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Djava.library.path=PATH_TO_YOUR_JRI_LIB ..."/>
      
-```
+    ```
 11. Right click on "SAMOSRunner crawl atlzoo.launch", select "Run As..." and choose the first item to run the crawler and download sample files to run SAMOS with. 
 12. Afterwards you can repeat the step 11 for either "SAMOSRunner cluster atlzoo.launch" or "SAMOSRunner clone atlzoo.launch" for domain clustering and clone detection respectively. 
 13. Once SAMOS is finished, the results can be viewed under the project root folder "results/r/atlzoo". 
