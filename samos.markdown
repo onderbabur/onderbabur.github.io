@@ -67,5 +67,23 @@ fragmentation in terms n-grams, (b) feature comparison using algorithms and natu
 For playing with other settings, you can run SAMOS (main entry point: nl.tue.set.samos.main.SAMOSRunner.java) with different datasets (e.g. [the large Ecore dataset on Zenodo](https://zenodo.org/record/2585456) and configuration such as scope, and NLP preprocessing. 
 
 # References
+To cite SAMOS, please use the following bibtex entry:
+
+````
+@article{babur2021samos,
+title = "{SAMOS}: A Framework for Model Analytics and Management",
+journal = "Science of Computer Programming",
+year = "2021",
+author = "Önder Babur and Mark {van den Brand}"
+}
+````
+
+Other publications for SAMOS: 
+
+Önder Babur, Loek Cleophas, and Mark van den Brand. Hierarchical clustering of metamodels for comparative analysis and visualization. In European Conference on Modelling Foundations and Applications, pages 3–18. Springer, 2016.
+
+Önder Babur, Loek Cleophas, and Mark van den Brand.  Metamodel clone detection with SAMOS. Journal of Computer Languages, 51, pages 57–74, 2019.
+
+Önder  Babur and Loek  Cleophas. Using  n-grams  for  the  automated  clustering  of structural  models. In International Conference on Current Trends in Theory and Practice of Informatics, pages 510–524. Springer, 2017.
 
 
