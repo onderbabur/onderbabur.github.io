@@ -78,7 +78,7 @@ author = "Önder Babur and Mark {van den Brand}"
 }
 ````
 
-Other publications for SAMOS: 
+Other major publications for SAMOS: 
 
 Önder Babur, Loek Cleophas, and Mark van den Brand. Hierarchical clustering of metamodels for comparative analysis and visualization. In European Conference on Modelling Foundations and Applications, pages 3–18. Springer, 2016.
 
