@@ -70,11 +70,11 @@ For playing with other settings, you can run SAMOS (main entry point: nl.tue.set
 To cite SAMOS, please use the following bibtex entry:
 
 ````
-@article{babur2021samos,
+@article{babur2022samos,
 title = "{SAMOS}: A Framework for Model Analytics and Management",
 journal = "Science of Computer Programming",
-year = "2021",
-author = "Önder Babur and Mark {van den Brand}"
+year = "2022",
+author = "{\"O}nder Babur and Loek Cleophas and Mark {van den Brand}"
 }
 ````
 
